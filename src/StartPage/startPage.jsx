@@ -5,8 +5,8 @@ import { Earth } from "lucide-react";
 
 export function Startpage({ Starquiz }) {
   return (
-    <main className="h-screen bg-zinc-800 flex items-center justify-center cursor-default px-4 overflow-hidden">
-      <div className="flex flex-col items-center justify-center w-full max-w-5xl h-full gap-4">
+    <main className="min-h-[100dvh] bg-zinc-800 flex items-center justify-center cursor-default px-4 py-8">
+      <div className="flex flex-col items-center justify-center w-full max-w-5xl gap-4">
         <header className="flex flex-col items-center justify-center text-white w-full shrink-0">
           <div className="flex flex-col md:flex-row justify-center items-center gap-3">
             <Plane
@@ -78,7 +78,7 @@ export function Startpage({ Starquiz }) {
           </p>
           <button
             onClick={Starquiz}
-            className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-6 sm:px-8 py-2 rounded-md transition-transform duration-300 hover:scale-105 font-medium w-full sm:w-auto text-xs sm:text-sm"
+            className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-6 sm:px-8 py-2 rounded-md transition-transform duration-300 hover:scale-105 font-medium w-full sm:w-auto text-xs sm:text-sm shadow-lg"
           >
             Start the questions
           </button>

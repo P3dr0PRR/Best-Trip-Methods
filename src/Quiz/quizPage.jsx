@@ -42,7 +42,7 @@ export function QuizPage() {
 
   if (page === "finished") {
     return (
-      <section className="h-screen bg-zinc-900 text-white flex flex-col items-center justify-center p-4 sm:p-6 cursor-default overflow-hidden">
+      <section className="min-h-[100dvh] bg-zinc-900 text-white flex flex-col items-center justify-center p-4 sm:p-6 cursor-default py-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-center">
           Quiz Finished!
         </h2>
@@ -54,7 +54,7 @@ export function QuizPage() {
           on your next trip!
         </p>
 
-        <div className="space-y-4 flex flex-col items-center justify-center mt-6 w-full max-w-md flex-1 overflow-y-auto">
+        <div className="space-y-4 flex flex-col items-center justify-center mt-6 w-full max-w-md">
           <ResultsDescription {...scores} />
         </div>
 
@@ -65,7 +65,7 @@ export function QuizPage() {
             setScores(INITIAL_SCORES);
             setPage("quiz");
           }}
-          className="mt-6 px-6 sm:px-8 py-2 sm:py-3 bg-indigo-600 rounded-md hover:bg-indigo-500 transition font-medium w-full sm:w-auto text-sm"
+          className="mt-6 mb-4 px-6 sm:px-8 py-2 sm:py-3 bg-indigo-600 rounded-md hover:bg-indigo-500 transition font-medium w-full sm:w-auto text-sm shadow-lg"
         >
           Start Over
         </button>
@@ -74,23 +74,23 @@ export function QuizPage() {
   }
 
   return (
-    <section className="h-screen bg-zinc-800 flex flex-col cursor-default text-white overflow-hidden px-4">
-      <header className="bg-zinc-700 text-left mt-3 p-4 rounded-md w-full shrink-0">
-        <h1 className="text-2xl sm:text-3xl font-bold text-stone-200">
+    <section className="min-h-[100dvh] bg-zinc-800 flex flex-col cursor-default text-white px-4 py-3">
+      <header className="bg-zinc-700 text-left p-3 rounded-md w-full shrink-0">
+        <h1 className="text-xl sm:text-2xl font-bold text-stone-200">
           Quiz Page
         </h1>
-        <p className="mt-2 text-stone-200 underline text-xs sm:text-sm">
+        <p className="mt-1 text-stone-200 underline text-xs">
           Question {currentQuestion + 1} of {questions.length}
         </p>
       </header>
 
-      <section className="flex flex-col items-center justify-center flex-1 py-4 overflow-y-auto w-full">
+      <section className="flex flex-col items-center w-full py-20 md:py-12 lg:py-2 xl:py-12 my-3 rounded-md shrink-0">
         <div className="flex flex-col items-center w-full max-w-2xl">
-          <h2 className="text-base sm:text-lg font-semibold text-center px-4">
+          <h2 className="text-sm sm:text-base font-semibold text-center px-4 mb-3">
             {q.question}
           </h2>
 
-          <article className="w-full px-4 mt-4 sm:mt-6">
+          <article className="w-full px-4">
             <ul className="space-y-2 text-stone-300">
               <OptionButton
                 option="A"
@@ -125,9 +125,9 @@ export function QuizPage() {
 
       <button
         onClick={handleSubmit}
-        className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-6 py-2 rounded-md font-medium w-full transition-transform duration-300 hover:scale-105 my-3 text-sm shrink-0"
+        className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-6 py-3 rounded-md font-bold w-full mt-6 text-base shrink-0 shadow-xl border-2 border-white"
       >
-        Submit
+        SUBMIT
       </button>
     </section>
   );
